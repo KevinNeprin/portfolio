@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://8p6ek3iqxuiw"]
+
+[node name="npc_trader" type="Area2D"]

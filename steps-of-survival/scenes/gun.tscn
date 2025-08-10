@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://4i77bopac7dw"]
+
+[ext_resource type="Script" uid="uid://c0l5ta6362dkh" path="res://scripts/gun.gd" id="1_gp1hk"]
+[ext_resource type="Texture2D" uid="uid://dgeg15qn08d2y" path="res://assets/PostApocalypse_AssetPack_v1.1.2/Character/Guns/Gun/Gun_side_idle-and-run-Sheet6.png" id="3_6b133"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og67c"]
+atlas = ExtResource("3_6b133")
+region = Rect2(0, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp1hk"]
+atlas = ExtResource("3_6b133")
+region = Rect2(16, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd4js"]
+atlas = ExtResource("3_6b133")
+region = Rect2(32, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b133"]
+atlas = ExtResource("3_6b133")
+region = Rect2(48, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haq8l"]
+atlas = ExtResource("3_6b133")
+region = Rect2(64, 0, 16, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmp1f"]
+atlas = ExtResource("3_6b133")
+region = Rect2(80, 0, 16, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvx52"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og67c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp1hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd4js")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b133")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haq8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmp1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="gun" type="Node2D"]
+script = ExtResource("1_gp1hk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gvx52")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(9, -2)

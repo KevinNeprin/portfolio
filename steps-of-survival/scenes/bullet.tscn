@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://byum8yiagvhi4"]
+
+[ext_resource type="Script" uid="uid://cfst2kq5flse8" path="res://scripts/bullet.gd" id="1_y25gk"]
+[ext_resource type="Texture2D" uid="uid://bsusn15srma28" path="res://assets/PostApocalypse_AssetPack_v1.1.2/Character/Guns/Bullets/Gun-bullet_Whole.png" id="2_l5glv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoqba"]
+atlas = ExtResource("2_l5glv")
+region = Rect2(0, 0, 4, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qncy5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoqba")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bullet" type="Node2D"]
+script = ExtResource("1_y25gk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qncy5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

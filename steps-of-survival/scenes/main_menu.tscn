@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://dori5tgmqg2pd"]
+
+[ext_resource type="Script" uid="uid://tbt4nadb6sxj" path="res://scripts/main_menu.gd" id="1_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://ch3gvdujxsdif" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Play_Not-Pressed.png" id="2_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://c6a8h06yrb6l0" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Play_Pressed.png" id="3_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://cpnkykiakhipn" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Load_Not-Pressed.png" id="4_flqon"]
+[ext_resource type="Texture2D" uid="uid://dqimp8w7imjmt" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Load_Pressed.png" id="5_rcqid"]
+[ext_resource type="Texture2D" uid="uid://dp5dpcepi1a6w" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Settings_Not-Pressed.png" id="6_1ajci"]
+[ext_resource type="Texture2D" uid="uid://bffurifghvnlg" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Settings_Pressed.png" id="7_7b55j"]
+[ext_resource type="Texture2D" uid="uid://c7o685vjt72fo" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Quit_Not-Pressed.png" id="8_5pajh"]
+[ext_resource type="Texture2D" uid="uid://bto2tvea6glpt" path="res://assets/PostApocalypse_AssetPack_v1.1.2/UI/Menu/Main Menu/Quit_Pressed.png" id="9_j7ex8"]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_jk1qb")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="button_panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 152.0
+offset_right = 243.0
+offset_bottom = 474.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="TextureButton" parent="button_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -121.0
+offset_right = 2.5
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_5dd4i")
+texture_pressed = ExtResource("3_lgwnu")
+
+[node name="load" type="TextureButton" parent="button_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -57.0
+offset_right = 2.5
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_vertical = 4
+texture_normal = ExtResource("4_flqon")
+texture_pressed = ExtResource("5_rcqid")
+
+[node name="settings" type="TextureButton" parent="button_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = 7.0
+offset_right = 2.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_vertical = 4
+texture_normal = ExtResource("6_1ajci")
+texture_pressed = ExtResource("7_7b55j")
+
+[node name="quit" type="TextureButton" parent="button_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = 71.0
+offset_right = 2.5
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_vertical = 4
+texture_normal = ExtResource("8_5pajh")
+texture_pressed = ExtResource("9_j7ex8")
+
+[connection signal="pressed" from="button_panel/play" to="." method="_on_play_pressed"]
